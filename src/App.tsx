@@ -31,11 +31,18 @@ function gen_permutations(permutations: PermutationData[], handleSelect: Functio
 }
 
 function renderSelected(selected: PermutationData[]) {
-  return selected.map((permutation) => {
+  if (selected.length > 0) {
+    return selected.map((permutation) => {
+      return (
+        <SelectedPermutation key={permutation.id} data={permutation}/>
+      );
+    });
+  } else {
     return (
-      <SelectedPermutation key={permutation.id} data={permutation}/>
+      <div>None selected.</div>
     );
-  });
+  }
+  
 }
 
 const Permutation: React.FC<{ data: PermutationData, handleSelect: Function, isSelected: boolean }> = (props) => {
