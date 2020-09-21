@@ -124,13 +124,13 @@ const App: React.FC = () => {
     setSelectedData([]);
   };
 
-  const renderPermutations = (permutations: PermutationData[], handleSelect: Function, selectedUuids: string[]) => {
-    if (permutations.length === 0) {
+  const renderPermutations = () => {
+    if (data.length === 0) {
       return (
-        <div>None found.</div>
+        <div className="error">None found.</div>
       );
     }
-    return permutations.map((permutation) => {
+    return data.map((permutation: PermutationData) => {
       const isSelected = selectedUuids.includes(permutation.id) ? true : false;
       return (
         <Permutation key={permutation.id} data={permutation} handleSelect={handleSelect} isSelected={isSelected}/>
@@ -145,7 +145,7 @@ const App: React.FC = () => {
           <h3> Permutation Wizard</h3>
         </header>
         <div className="permutations-container">
-          {renderPermutations(data, handleSelect, selectedUuids)}
+          {renderPermutations()}
           <div className="buttons-container">
             <Link to="/campaign"><button>Confirm</button></Link>
             <button onClick={handleReset}>Reset</button>
