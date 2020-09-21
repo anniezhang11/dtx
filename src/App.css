@@ -1,3 +1,5 @@
+/* app css */
+
 .App {
   text-align: center;
 }
@@ -21,9 +23,14 @@
   color: #09d3ac;
 }
 
+/* permutations */
+
 .permutations-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
+  padding: 30px 20px;
 }
 
 .permutation {
@@ -32,4 +39,41 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 20px;
+  width: 46%;
 }
+
+.brand {
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: 500;
+}
+
+.error {
+  margin-bottom: 20px;
+}
+
+/* buttons */
+
+button {
+  width: 120px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a { text-decoration: none; }
+a:visited { text-decoration: none; color:black; }
+a:hover { text-decoration: none; color:black; }
+a:focus { text-decoration: none; color:black; }
+a:hover, a:active { text-decoration: none; color:black }
